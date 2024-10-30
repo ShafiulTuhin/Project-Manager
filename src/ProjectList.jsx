@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { categories } from "./data/data";
+import React, { useContext, useState } from "react";
+import { ProjectContext } from "./context";
 
-const ProjectList = ({ openModal, projects }) => {
-  console.log(projects);
+const ProjectList = ({ openModal }) => {
+  const { projectData, setProjectsData } = useContext(ProjectContext);
 
   return (
     <>
@@ -63,7 +63,7 @@ const ProjectList = ({ openModal, projects }) => {
               </div>
 
               <div>
-                {projects
+                {projectData
                   .filter(
                     (type) =>
                       type.category === "To-Do" || type.category === "todo"
@@ -150,7 +150,7 @@ const ProjectList = ({ openModal, projects }) => {
               </div>
 
               <div>
-                {projects
+                {projectData
                   .filter(
                     (type) =>
                       type.category === "On Progress" ||
@@ -242,7 +242,7 @@ const ProjectList = ({ openModal, projects }) => {
               </div>
 
               <div>
-                {projects
+                {projectData
                   .filter(
                     (type) =>
                       type.category === "Done" || type.category === "done"
@@ -332,7 +332,7 @@ const ProjectList = ({ openModal, projects }) => {
               </div>
 
               <div>
-                {projects
+                {projectData
                   .filter(
                     (type) =>
                       type.category === "Revise" || type.category === "revise"

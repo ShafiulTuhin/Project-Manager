@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import ProjectList from "./ProjectList";
 import AddProjectModal from "./AddProjectModal";
-import { getAllProjects } from "./data/data";
+import { ProjectContext } from "./context";
 
 const ProjectBoard = () => {
-  const [projects, setProjects] = useState(getAllProjects);
   const [showModal, setShowModal] = useState(false);
+  const { projectData, setProjectData } = useContext(ProjectContext);
 
   const handleAddProject = (newProject) => {
-    setProjects([...projects, { ...newProject, id: crypto.randomUUID() }]);
+    setProjectData([
+      ...projectData,
+      { ...newProject, id: crypto.randomUUID() },
+    ]);
     setShowModal(false);
   };
   // console.log(projects);
@@ -30,7 +33,7 @@ const ProjectBoard = () => {
         <Sidebar />
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
           <Header />
-          <ProjectList openModal={handleAddModal} projects={projects} />
+          <ProjectList openModal={handleAddModal} />
         </main>
       </div>
     </>

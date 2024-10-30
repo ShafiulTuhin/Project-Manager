@@ -28,24 +28,7 @@ const AddProjectModal = ({ onSave, onClose }) => {
       date: "",
     });
   };
-  // const handleError = () => {
-  //   const newErrors = {};
 
-  //   if (!project.title) newErrors.project.title = "Please select Title";
-
-  //   if (!project.description)
-  //     newErrors.project.description = "Please input Description";
-
-  //   if (!project.date) newErrors.project.date = "Please select Date";
-
-  //   if (!project.category)
-  //     newErrors.project.category = "Please select Category";
-
-  //   setErrors(newErrors);
-  //   console.log(newErrors);
-
-  //   return Object.keys(newErrors).length === 0; // Return true if no errors exist
-  // };
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(project);

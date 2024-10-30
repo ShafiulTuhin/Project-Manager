@@ -1,9 +1,15 @@
+import { useState } from "react";
 import ProjectBoard from "./ProjectBoard";
+import { ProjectContext } from "./context";
+import { getAllProjects } from "./data/data";
 
 function App() {
+  const [projectData, setProjectData] = useState(getAllProjects);
   return (
     <>
-      <ProjectBoard />
+      <ProjectContext.Provider value={{ projectData, setProjectData }}>
+        <ProjectBoard />
+      </ProjectContext.Provider>
     </>
   );
 }
