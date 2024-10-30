@@ -1,8 +1,16 @@
 import React, { useContext, useState } from "react";
 import { ProjectContext } from "./context";
 
-const ProjectList = ({ openModal }) => {
-  const { projectData, setProjectsData } = useContext(ProjectContext);
+const ProjectList = ({ openModal, onEdit }) => {
+  const { projectData, setProjectData } = useContext(ProjectContext);
+
+  const handleDeleteProject = (projectId) => {
+    const projectAfterDelete = projectData.filter(
+      (project) => project.id !== projectId
+    );
+    setProjectData(projectAfterDelete);
+    alert("Want to delete?");
+  };
 
   return (
     <>
@@ -69,7 +77,10 @@ const ProjectList = ({ openModal }) => {
                       type.category === "To-Do" || type.category === "todo"
                   )
                   .map((project) => (
-                    <div className="mb-4 rounded-lg bg-gray-800 p-4">
+                    <div
+                      className="mb-4 rounded-lg bg-gray-800 p-4"
+                      key={project.id}
+                    >
                       <div className="flex justify-between">
                         <h4 className="mb-2 flex-1 font-semibold text-indigo-500">
                           {project.title}
@@ -87,6 +98,7 @@ const ProjectList = ({ openModal }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
+                            onClick={() => handleDeleteProject(project.id)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -95,12 +107,14 @@ const ProjectList = ({ openModal }) => {
                             <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
                             <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                           </svg>
+
                           <svg
                             className="h-4 w-4 cursor-pointer text-zinc-300"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
+                            onClick={() => onEdit(project)}
                           >
                             <path
                               stroke-linecap="round"
@@ -178,6 +192,7 @@ const ProjectList = ({ openModal }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
+                            onClick={() => handleDeleteProject(project.id)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -192,6 +207,7 @@ const ProjectList = ({ openModal }) => {
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
+                            onClick={() => onEdit(project)}
                           >
                             <path
                               stroke-linecap="round"
@@ -269,6 +285,7 @@ const ProjectList = ({ openModal }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
+                            onClick={() => handleDeleteProject(project.id)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -283,6 +300,7 @@ const ProjectList = ({ openModal }) => {
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
+                            onClick={() => onEdit(project)}
                           >
                             <path
                               stroke-linecap="round"
@@ -338,7 +356,10 @@ const ProjectList = ({ openModal }) => {
                       type.category === "Revise" || type.category === "revise"
                   )
                   .map((project) => (
-                    <div className="mb-4 rounded-lg bg-gray-800 p-4">
+                    <div
+                      className="mb-4 rounded-lg bg-gray-800 p-4"
+                      key={project.id}
+                    >
                       <div className="flex justify-between">
                         <h4 className="mb-2 flex-1 font-semibold text-indigo-500">
                           {project.title}
@@ -356,6 +377,7 @@ const ProjectList = ({ openModal }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
+                            onClick={() => handleDeleteProject(project.id)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -370,6 +392,7 @@ const ProjectList = ({ openModal }) => {
                             stroke="currentColor"
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
+                            onClick={() => onEdit(project)}
                           >
                             <path
                               stroke-linecap="round"

@@ -1,12 +1,12 @@
 const data = [
   {
     id: crypto.randomUUID(),
-    category: "To-Do",
+    category: "To-Do" || "todo",
     title: "Content Writer Content Writer Content Writer",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
-    date: "February 20, 2024",
+    date: "2024-11-15",
   },
   {
     id: crypto.randomUUID(),
@@ -15,7 +15,7 @@ const data = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
-    date: "February 20, 2024",
+    date: "2024-10-15",
   },
   {
     id: crypto.randomUUID(),
@@ -24,7 +24,7 @@ const data = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
-    date: "February 20, 2024",
+    date: "2023-05-25",
   },
   {
     id: crypto.randomUUID(),
@@ -33,7 +33,7 @@ const data = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
-    date: "February 20, 2024",
+    date: "2020-10-16",
   },
   {
     id: crypto.randomUUID(),
@@ -42,7 +42,7 @@ const data = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
-    date: "February 20, 2024",
+    date: "2024-10-26",
   },
   {
     id: crypto.randomUUID(),
@@ -51,7 +51,7 @@ const data = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
-    date: "February 20, 2024",
+    date: "2021-07-29",
   },
 ];
 
