@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ProjectContext } from "./context";
 
 const ProjectList = ({ openModal, onEdit }) => {
-  const { projectData, setProjectData } = useContext(ProjectContext);
+  const { state, dispatch } = useContext(ProjectContext);
 
-  const handleDeleteProject = (projectId) => {
-    const projectAfterDelete = projectData.filter(
-      (project) => project.id !== projectId
-    );
-    setProjectData(projectAfterDelete);
-    alert("Want to delete?");
+  const handleDeleteProject = (event, projectId) => {
+    event.preventDefault();
+    dispatch({
+      type: "DELETE_FROM_PROJECT",
+      payload: projectId,
+    });
   };
 
   return (
@@ -71,7 +71,7 @@ const ProjectList = ({ openModal, onEdit }) => {
               </div>
 
               <div>
-                {projectData
+                {state.projectData
                   .filter(
                     (type) =>
                       type.category === "To-Do" || type.category === "todo"
@@ -98,7 +98,7 @@ const ProjectList = ({ openModal, onEdit }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
-                            onClick={() => handleDeleteProject(project.id)}
+                            onClick={() => handleDeleteProject(event, project)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -164,7 +164,7 @@ const ProjectList = ({ openModal, onEdit }) => {
               </div>
 
               <div>
-                {projectData
+                {state.projectData
                   .filter(
                     (type) =>
                       type.category === "On Progress" ||
@@ -192,7 +192,7 @@ const ProjectList = ({ openModal, onEdit }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
-                            onClick={() => handleDeleteProject(project.id)}
+                            onClick={() => handleDeleteProject(event, project)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -258,7 +258,7 @@ const ProjectList = ({ openModal, onEdit }) => {
               </div>
 
               <div>
-                {projectData
+                {state.projectData
                   .filter(
                     (type) =>
                       type.category === "Done" || type.category === "done"
@@ -285,7 +285,7 @@ const ProjectList = ({ openModal, onEdit }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
-                            onClick={() => handleDeleteProject(project.id)}
+                            onClick={() => handleDeleteProject(event, project)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
@@ -350,7 +350,7 @@ const ProjectList = ({ openModal, onEdit }) => {
               </div>
 
               <div>
-                {projectData
+                {state.projectData
                   .filter(
                     (type) =>
                       type.category === "Revise" || type.category === "revise"
@@ -377,7 +377,7 @@ const ProjectList = ({ openModal, onEdit }) => {
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             className="h-4 w-4 cursor-pointer text-zinc-300"
-                            onClick={() => handleDeleteProject(project.id)}
+                            onClick={() => handleDeleteProject(event, project)}
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />

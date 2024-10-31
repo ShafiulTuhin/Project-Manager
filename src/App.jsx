@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import ProjectBoard from "./ProjectBoard";
 import { ProjectContext } from "./context";
 import { getAllProjects } from "./data/data";
+import { initialState, projectRedecer } from "./reducers/ProjectReducer";
 
 function App() {
-  const [projectData, setProjectData] = useState(getAllProjects);
+  const [state, dispatch] = useReducer(projectRedecer, initialState);
+
   return (
     <>
-      <ProjectContext.Provider value={{ projectData, setProjectData }}>
+      <ProjectContext.Provider value={{ state, dispatch }}>
         <ProjectBoard />
       </ProjectContext.Provider>
     </>

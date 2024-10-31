@@ -34,7 +34,7 @@ const AddProjectModal = ({ onSave, onClose, projectToUpdate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(project);
+    onSave(project, isAdd);
     resetForm();
   };
 
@@ -44,7 +44,7 @@ const AddProjectModal = ({ onSave, onClose, projectToUpdate }) => {
         <div className="w-full max-w-md rounded-lg bg-gray-800 shadow-xl">
           <div className="p-6">
             <h2 className="mb-6 text-2xl font-bold text-green-400">
-              Create Task
+              {isAdd ? "Create Project" : "Edit Project"}
             </h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">

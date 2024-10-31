@@ -7,28 +7,30 @@ import { ProjectContext } from "./context";
 
 const ProjectBoard = () => {
   const [showModal, setShowModal] = useState(false);
-  const { projectData, setProjectData } = useContext(ProjectContext);
+  // const { projectData, setProjectData } = useContext(ProjectContext);
+  const { state, dispatch } = useContext(ProjectContext);
   const [projectToUpdate, setProjectToUpdate] = useState(null);
+  console.log(state.projectData);
 
   const handleAddEditProject = (newProject, isAdd) => {
     if (isAdd) {
-      setProjectData([
-        ...projectData,
-        { ...newProject, id: crypto.randomUUID() },
-      ]);
+      dispatch({
+        type: "ADD_TO_PROJECT",
+        payload: {
+          ...newProject,
+          id: crypto.randomUUID(),
+        },
+      });
     } else {
-      setProjectData(
-        projectData.map((project) => {
-          if (project.id === newProject.id) return newProject;
-          return project;
-        })
-      );
+      dispatch({
+        type: " CHANGE_IN_PROJECT",
+        payload: newProject,
+      });
     }
     setShowModal(false);
   };
   const handleEditProject = (project) => {
     setProjectToUpdate(project);
-
     setShowModal(true);
   };
 
