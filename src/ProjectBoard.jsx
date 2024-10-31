@@ -10,8 +10,6 @@ const ProjectBoard = () => {
   const [projectToUpdate, setProjectToUpdate] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  console.log(state.projectData);
-
   const handleAddEditProject = (newProject, isAdd) => {
     if (isAdd) {
       dispatch({

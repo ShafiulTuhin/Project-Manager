@@ -1,8 +1,8 @@
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import ProjectBoard from "./ProjectBoard";
 import { ProjectContext } from "./context";
-import { getAllProjects } from "./data/data";
 import { initialState, projectRedecer } from "./reducers/ProjectReducer";
+import { getAllProjects } from "./data/data";
 
 function App() {
   const [state, dispatch] = useReducer(projectRedecer, initialState);

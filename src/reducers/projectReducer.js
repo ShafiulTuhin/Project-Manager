@@ -1,6 +1,5 @@
-import { getAllProjects } from "../data/data";
 const initialState = {
-  projectData: [getAllProjects],
+  projectData: [],
 };
 
 const projectRedecer = (state, action) => {
@@ -19,7 +18,6 @@ const projectRedecer = (state, action) => {
           return project;
         }),
       };
-
       break;
 
     case "DELETE_FROM_PROJECT":

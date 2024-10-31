@@ -76,9 +76,6 @@ const AddProjectModal = ({ onSave, onClose, projectToUpdate }) => {
                   rows="3"
                   className="w-full rounded-md border border-gray-600 bg-gray-700 px-3 py-2 text-white placeholder-gray-400 shadow-sm focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500"
                 ></textarea>
-                {/* {errors?.project?.description && (
-                  <p className="text-red">{errors?.project?.description}</p>
-                )} */}
               </div>
               <div className="mb-4">
                 <label

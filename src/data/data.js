@@ -10,7 +10,7 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "On Progress",
+    category: "On Progress" || "inprogress",
     title: "Content Writer Content Writer Content Writer",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
@@ -19,7 +19,7 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "Done",
+    category: "Done" || "done",
     title: "Content Writer Content Writer Content Writer",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
@@ -28,7 +28,7 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "Revise",
+    category: "Revise" || "revise",
     title: "Content Writer Content Writer Content Writer",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
