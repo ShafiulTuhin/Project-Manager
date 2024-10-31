@@ -6,10 +6,10 @@ import AddProjectModal from "./AddProjectModal";
 import { ProjectContext } from "./context";
 
 const ProjectBoard = () => {
-  const [showModal, setShowModal] = useState(false);
-  // const { projectData, setProjectData } = useContext(ProjectContext);
   const { state, dispatch } = useContext(ProjectContext);
   const [projectToUpdate, setProjectToUpdate] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   console.log(state.projectData);
 
   const handleAddEditProject = (newProject, isAdd) => {
@@ -23,8 +23,8 @@ const ProjectBoard = () => {
       });
     } else {
       dispatch({
-        type: " CHANGE_IN_PROJECT",
-        payload: newProject,
+        type: "CHANGE_IN_PROJECT",
+        payload: { ...newProject },
       });
     }
     setShowModal(false);
