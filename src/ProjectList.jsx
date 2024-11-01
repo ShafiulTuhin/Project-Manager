@@ -10,8 +10,8 @@ const ProjectList = ({ openModal, onEdit, searchItem }) => {
   // Filtering all Category from Array
   const filterProject = state.projectData.filter(
     (project) =>
-      project.title.toLowerCase().includes(searchItem.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchItem.toLowerCase())
+      project.title.toLowerCase().includes(searchItem?.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchItem?.toLowerCase())
   );
   //Sorting Date and searching 'title' for To-Do:
   const [toDoAscending, setToDoAscending] = useState(true);

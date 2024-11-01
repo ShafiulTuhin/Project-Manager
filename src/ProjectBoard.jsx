@@ -28,6 +28,7 @@ const ProjectBoard = () => {
       });
       alert(`Edited ${newProject.title} Successfully`);
     }
+    setProjectToUpdate(null);
     setShowModal(false);
   };
   const handleEditProject = (project) => {
@@ -36,6 +37,7 @@ const ProjectBoard = () => {
   };
 
   const handleAddModal = () => {
+    setProjectToUpdate(null);
     setShowModal(true);
   };
 
