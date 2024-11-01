@@ -2,7 +2,7 @@ import { useReducer } from "react";
 
 import ProjectBoard from "./ProjectBoard";
 import { ProjectContext } from "./context";
-import { initialState, projectRedecer } from "./reducers/ProjectReducer";
+import { initialState, projectRedecer } from "./reducers/projectReducer";
 
 function App() {
   const [state, dispatch] = useReducer(projectRedecer, initialState);
