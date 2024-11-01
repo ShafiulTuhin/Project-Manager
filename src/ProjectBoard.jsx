@@ -6,9 +6,10 @@ import AddProjectModal from "./AddProjectModal";
 import { ProjectContext } from "./context";
 
 const ProjectBoard = () => {
-  const { state, dispatch } = useContext(ProjectContext);
+  const { dispatch } = useContext(ProjectContext);
   const [projectToUpdate, setProjectToUpdate] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [searchItem, setSearchItem] = useState("");
 
   const handleAddEditProject = (newProject, isAdd) => {
     if (isAdd) {
@@ -19,11 +20,13 @@ const ProjectBoard = () => {
           id: crypto.randomUUID(),
         },
       });
+      alert(`Addedd ${newProject.title} Successfully`);
     } else {
       dispatch({
         type: "CHANGE_IN_PROJECT",
         payload: { ...newProject },
       });
+      alert(`Edited ${newProject.title} Successfully`);
     }
     setShowModal(false);
   };
@@ -39,6 +42,10 @@ const ProjectBoard = () => {
   const closeModal = () => {
     setShowModal(false);
   };
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearchItem(value);
+  };
   return (
     <>
       {showModal && (
@@ -51,8 +58,12 @@ const ProjectBoard = () => {
       <div className={`flex h-screen bg-black ${showModal ? "blur" : ""}`}>
         <Sidebar />
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
-          <Header />
-          <ProjectList openModal={handleAddModal} onEdit={handleEditProject} />
+          <Header onSearch={handleSearch} />
+          <ProjectList
+            openModal={handleAddModal}
+            onEdit={handleEditProject}
+            searchItem={searchItem}
+          />
         </main>
       </div>
     </>

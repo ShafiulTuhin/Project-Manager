@@ -1,6 +1,4 @@
-import React from "react";
-
-const Header = () => {
+const Header = ({ onSearch }) => {
   return (
     <>
       <header className="flex items-center justify-between bg-gray-800 p-4">
@@ -13,8 +11,8 @@ const Header = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
@@ -24,6 +22,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search here"
+            onChange={onSearch}
             className="w-full max-w-xl rounded-full bg-gray-700 px-4 py-2 text-white focus:outline-none"
           />
         </div>
@@ -37,8 +36,8 @@ const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
               ></path>
@@ -54,8 +53,8 @@ const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               ></path>

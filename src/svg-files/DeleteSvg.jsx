@@ -10,8 +10,8 @@ const DeleteSvg = ({ onDelete }) => {
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="h-4 w-4 cursor-pointer text-zinc-300"
       onClick={onDelete}
     >

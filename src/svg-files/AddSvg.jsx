@@ -10,8 +10,8 @@ const AddSvg = () => {
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="mr-2"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

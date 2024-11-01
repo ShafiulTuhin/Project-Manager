@@ -1,8 +1,8 @@
 const data = [
   {
     id: crypto.randomUUID(),
-    category: "To-Do" || "todo",
-    title: "Content Writer Content Writer Content Writer",
+    category: "todo",
+    title: "Bangladesh War-1971",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
@@ -10,17 +10,17 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "On Progress" || "inprogress",
-    title: "Content Writer Content Writer Content Writer",
+    category: "inprogress",
+    title: "Web Applications",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
+      "Bangladesh, officially the People's Republic of Bangladesh, is a country in South Asia",
 
     date: "2024-10-15",
   },
   {
     id: crypto.randomUUID(),
-    category: "Done" || "done",
-    title: "Content Writer Content Writer Content Writer",
+    category: "done",
+    title: "Learn MERN Stack Web Programming",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
@@ -28,7 +28,7 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "Revise" || "revise",
+    category: "revise",
     title: "Content Writer Content Writer Content Writer",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
@@ -37,8 +37,8 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "To-Do",
-    title: "Content Writer Content Writer Content Writer",
+    category: "todo",
+    title: "Cultural and festival rules of...",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 
@@ -46,8 +46,8 @@ const data = [
   },
   {
     id: crypto.randomUUID(),
-    category: "Done",
-    title: "Content Writer Content Writer Content Writer",
+    category: "done",
+    title: "Next Js is React Native is Next",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facere quisquam!animi.",
 

@@ -1,6 +1,6 @@
 import { getAllProjects } from "../data/data";
 const initialState = {
-  projectData: [getAllProjects],
+  projectData: getAllProjects(),
 };
 
 const projectRedecer = (state, action) => {
